@@ -1,0 +1,13 @@
+<span>Bucket List</span>
+<button [routerLink]="['/dashboard']">Home</button>
+<app-user-logout></app-user-logout>
+
+<p>Welcome, {{ user.name }}!</p>
+
+<app-item-new></app-item-new>
+
+<p>Before I kick the bucket I want to..</p>
+<app-item-list></app-item-list>
+
+<p>List of other users (Click to view profile):</p>
+<app-user-list></app-user-list>

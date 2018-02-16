@@ -1,0 +1,40 @@
+<form
+  (submit)="onSubmit(); createItem.resetForm()"
+  #createItem="ngForm"
+>
+  <input
+    placeholder="Title"
+    name="title"
+    type="text"
+    required
+    minlength="5"
+    [(ngModel)]="item.title"
+    #title="ngModel"
+  />
+  <input
+    placeholder="Description"
+    name="description"
+    type="text"
+    required
+    minlength="10"
+    [(ngModel)]="item.description"
+    #description="ngModel"
+  />
+  <select
+    name="tagged"
+    type="text"
+    [(ngModel)]="item.tagged"
+    #tagged="ngModel"
+  >
+    <option 
+      *ngFor="let user of users; let i of index"
+      value="{{user._id}}"
+    >
+    {{ user.name }}
+    </option>
+
+  </select>
+  <button [disabled]="!createItem.valid" type="submit">Add to List</button>
+  
+
+</form>
